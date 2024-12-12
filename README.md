@@ -6,21 +6,23 @@ AIGENTLAYER is an open-source project that aims to simplify interaction with Eig
 
 ## Key Features (Current)
 
-- **Deposit ETH into EigenLayer:** Request a deposit, and AIGENT will handle the transaction.
-- **Fetch Staked Balances:** Quickly check how much ETH you have staked.
 - **GaiaNet Integration:** AIGENT uses GaiaNet as its default AI LLM API.
+- **Check TVL:** Quickly check the total value locked in EigenLayer.
+- **Check operator status:** Quickly check the status of an operator.
+- **Check staker status:** Quickly check the status of a staker.
+- **Deposit stETH into EigenLayer:** Request a deposit, and AIGENT will handle the transaction.
 
 ## Roadmap (Ideal Features)
 
 - **Claim Rewards:** Automatically claim staking rewards.
 - **Withdraw & Redelegate:** Manage your staking positions effortlessly.
-- **EigenExplorer Integration:** Gain real-time insights and data from the EigenLayer ecosystem.
+- **EigenExplorer Full Integration:** Gain real-time insights and data from the EigenLayer ecosystem.
 - **Advanced Evaluators:** Intelligent decision-making—AIGENT can suggest when to restake, claim, or withdraw based on market conditions.
 
 ## Tech Stack
 
 - **Framework:** ai16z Eliza
-- **Languages:** Primarily TypeScript (Node.js, pnpm). Some Python if needed for auxiliary tasks.
+- **Languages:** Primarily TypeScript (Node.js, pnpm).
 - **Architecture:** Modular monorepo allowing for easy extension of actions, providers, and evaluators.
 
 ## GaiaNet Integration
@@ -41,6 +43,14 @@ Key files and folders:
 │   │   └── aigent.character.json       # Character file
 │   ├── packages/                       # Packages Folder
 │   │   ├── plugin-eigenlayer/          # Custom plugin for EigenLayer
+│   │   │   └── src/                    # Source code for the plugin
+│   │   │   └── actions/                # Actions for the plugin
+│   │   │   │   └── eigendeposit.ts     # Action to deposit stETH into EigenLayer
+│   │   │   └── evaluators/             # Evaluators for the plugin
+│   │   │   └── providers/              # Providers for the plugin
+│   │   │   │   └── tvl.ts              # TVL data provider
+│   │   │   │   └── operator.ts         # Operator data provider
+│   │   │   │   └── staker.ts           # Staker data provider
 │   │   └── client/                     # Web Client
 └── README.md                           # This file
 ```
@@ -80,7 +90,16 @@ pnpm install
 cp .env.example .env
 ```
 
-4. **Configure Environment (OPTIONAL)** 
+4.1 **Configure Environment (REQUIRED)** 
+
+Edit .env and add your values:
+
+```env
+EVM_PRIVATE_KEY=      # Your Ethereum private key (needs to have testnet ETH and stETH)
+INFURA_API_KEY=       # Your Infura API key
+```
+
+4.2 **Configure Environment (OPTIONAL)** 
 
 Edit .env and add your values:
 
@@ -178,8 +197,18 @@ http://localhost:5173/
 
 ### Usage Examples
 
-- **Deposit:** "AIGENT, deposit 0.1 ETH into EigenLayer."
-- **Check Balance:** "AIGENT, what's my staked ETH balance?"
+`What is eigenlayer?`
+
+`Can you explain what restaking is?`
+
+`What's the current TVL in EigenLayer?`
+
+`Show operator status for 0x0a3e3d83c99b27ca7540720b54105c79cd58dbdd`
+
+`Show staker status for 0x0000000f65d503603782d94e78e30c6d05955741`
+
+`Please deposit 0.01 stETH into EigenLayer.`
+
 
 ## Contributing
 
