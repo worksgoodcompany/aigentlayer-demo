@@ -80,7 +80,16 @@ pnpm install
 cp .env.example .env
 ```
 
-4. **Configure Environment (OPTIONAL)** 
+4.1 **Configure Environment (REQUIRED)** 
+
+Edit .env and add your values:
+
+```env
+EVM_PRIVATE_KEY=      # Your Ethereum private key (needs to have ETH and stETH)
+INFURA_API_KEY=       # Your Infura API key
+```
+
+4.2 **Configure Environment (OPTIONAL)** 
 
 Edit .env and add your values:
 
