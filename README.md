@@ -85,7 +85,7 @@ cp .env.example .env
 Edit .env and add your values:
 
 ```env
-EVM_PRIVATE_KEY=      # Your Ethereum private key (needs to have ETH and stETH)
+EVM_PRIVATE_KEY=      # Your Ethereum private key (needs to have testnet ETH and stETH)
 INFURA_API_KEY=       # Your Infura API key
 ```
 
