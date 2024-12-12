@@ -321,14 +321,14 @@ const eigenDepositAction: Action = {
 
                     return true;
                 } catch (error) {
-                    console.error("Detailed error:", {
+/*                     console.error("Detailed error:", {
                         message: error.message,
                         code: error.code,
                         data: error.data,
                         transaction: error.transaction,
                         stack: error.stack,
                         error: JSON.stringify(error, null, 2),
-                    });
+                    }); */
 
                     // Try to decode error if possible
                     if (error.data) {
@@ -349,13 +349,13 @@ const eigenDepositAction: Action = {
                     return false;
                 }
             } catch (error) {
-                console.error("Detailed error:", {
+/*                 console.error("Detailed error:", {
                     message: error.message,
                     code: error.code,
                     data: error.data,
                     transaction: error.transaction,
                     error: JSON.stringify(error, null, 2),
-                });
+                }); */
 
                 if (error.code === "ACTION_REJECTED") {
                     console.log("Transaction was rejected by user");
@@ -372,14 +372,14 @@ const eigenDepositAction: Action = {
                 return false;
             }
         } catch (error) {
-            console.error("Detailed error:", {
+/*             console.error("Detailed error:", {
                 message: error.message,
                 code: error.code,
                 data: error.data,
                 transaction: error.transaction,
                 error: JSON.stringify(error, null, 2),
             });
-
+ */
             if (error.code === "ACTION_REJECTED") {
                 console.log("Transaction was rejected by user");
             } else if (error.code === "INSUFFICIENT_FUNDS") {

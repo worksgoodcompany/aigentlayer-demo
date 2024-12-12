@@ -8,6 +8,7 @@ AIGENTLAYER is an open-source project that aims to simplify interaction with Eig
 
 - **Deposit ETH into EigenLayer:** Request a deposit, and AIGENT will handle the transaction.
 - **Fetch Staked Balances:** Quickly check how much ETH you have staked.
+- **GaiaNet Integration:** AIGENT uses GaiaNet as its default AI LLM API.
 
 ## Roadmap (Ideal Features)
 
@@ -21,6 +22,10 @@ AIGENTLAYER is an open-source project that aims to simplify interaction with Eig
 - **Framework:** ai16z Eliza
 - **Languages:** Primarily TypeScript (Node.js, pnpm). Some Python if needed for auxiliary tasks.
 - **Architecture:** Modular monorepo allowing for easy extension of actions, providers, and evaluators.
+
+## GaiaNet Integration
+
+AIGENTLAYER uses GaiaNet as its default AI LLM API. This integration simplifies how the agent interprets natural language, offering scalable and reliable language processing to power its autonomous actions. By building on GaiaNet’s infrastructure, we also align with the Gaia Agent Infrastructure Challenge criteria, demonstrating how integrating GaiaNet’s capabilities can enhance agent performance and contribute to the Gaia ecosystem’s growth.
 
 ## Project Structure
 
@@ -125,7 +130,7 @@ Set up the clients you want to use and the AI model provider
 "name": "AIGENT",                                       # Change this to your desired name.
     "plugins": [],
     "clients": ["discord", "twitter", "telegram"],      # Remove the ones you don't need.
-    "modelProvider": "anthropic",                       # You can replace this with "openai", "openrouter" or others.
+    "modelProvider": "gaianet",                         # You can replace this with "openai", "openrouter" or others.
 ```
 
 6. **Build the Agent**
@@ -151,6 +156,10 @@ cd eliza/client
 ```bash
 pnpm run dev
 ```
+
+3. **Access the client**
+You can access the client using a web browser at:
+http://localhost:5173/
 
 ## Interacting with AIGENT
 
