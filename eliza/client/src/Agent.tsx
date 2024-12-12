@@ -1,10 +1,13 @@
+import { useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+
 export default function Agent() {
-    return (
-        <div className="min-h-screen flex flex-col items-center justify-center p-4">
-            <p className="text-lg text-gray-600">
-                Select an option from the sidebar to configure, view, or chat
-                with your ELIZA agent
-            </p>
-        </div>
-    );
+    const navigate = useNavigate();
+    const { agentId } = useParams();
+
+    useEffect(() => {
+        navigate(`/${agentId}/chat`, { replace: true });
+    }, [agentId, navigate]);
+
+    return null;
 }

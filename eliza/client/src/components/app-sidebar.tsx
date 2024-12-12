@@ -1,56 +1,25 @@
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
-import { useParams } from "react-router-dom";
-
-import {
-    Sidebar,
-    SidebarContent,
-    SidebarGroup,
-    SidebarGroupContent,
-    SidebarGroupLabel,
-    SidebarMenu,
-    SidebarMenuButton,
-    SidebarMenuItem,
-    SidebarTrigger,
-} from "@/components/ui/sidebar";
-
-// Menu items.
-const items = [
-    {
-        title: "Chat",
-        url: "chat",
-        icon: Inbox,
-    },
-    {
-        title: "Character Overview",
-        url: "character",
-        icon: Calendar,
-    },
-];
+import { MessageSquare } from "lucide-react";
+import { useParams, Link } from "react-router-dom";
 
 export function AppSidebar() {
     const { agentId } = useParams();
 
     return (
-        <Sidebar>
-            <SidebarContent>
-                <SidebarGroup>
-                    <SidebarGroupLabel>Application</SidebarGroupLabel>
-                    <SidebarGroupContent>
-                        <SidebarMenu>
-                            {items.map((item) => (
-                                <SidebarMenuItem key={item.title}>
-                                    <SidebarMenuButton asChild>
-                                        <a href={`/${agentId}/${item.url}`}>
-                                            <item.icon />
-                                            <span>{item.title}</span>
-                                        </a>
-                                    </SidebarMenuButton>
-                                </SidebarMenuItem>
-                            ))}
-                        </SidebarMenu>
-                    </SidebarGroupContent>
-                </SidebarGroup>
-            </SidebarContent>
-        </Sidebar>
+        <div className="h-full flex flex-col bg-background">
+            <div className="h-12 flex items-center px-3 border-b border-white/[0.08]">
+                <Link to="/" className="text-sm font-semibold gradient-text">
+                    AIgentLayer
+                </Link>
+            </div>
+            <nav className="flex-1 p-1.5">
+                <Link
+                    to={`/${agentId}/chat`}
+                    className="flex items-center gap-2 px-2 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-white/[0.04]"
+                >
+                    <MessageSquare className="h-4 w-4" />
+                    <span>Chat</span>
+                </Link>
+            </nav>
+        </div>
     );
 }
