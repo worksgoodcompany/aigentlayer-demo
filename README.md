@@ -70,7 +70,7 @@ pnpm install
 cp .env.example .env
 ```
 
-4. **Configure Environment**
+4. **Configure Environment (OPTIONAL)** 
 
 Edit .env and add your values:
 
@@ -103,8 +103,8 @@ OPENROUTER_API_KEY=
 OPENROUTER_MODEL=      # Default: uses hermes 70b/405b
 
 # Gaianet Configuration
-GAIANET_MODEL=
-GAIANET_SERVER_URL=
+GAIANET_MODEL=llama
+GAIANET_SERVER_URL=https://llama8b.gaia.domains/v1
 
 SMALL_GAIANET_MODEL=        # Default: llama3b
 SMALL_GAIANET_SERVER_URL=   # Default: https://llama3b.gaia.domains/v1
