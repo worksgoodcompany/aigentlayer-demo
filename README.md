@@ -45,12 +45,22 @@ Key files and folders:
 └── README.md                           # This file
 ```
 
+## Prerequisites
+
+Before getting started with Eliza, ensure you have:
+- Python 2.7+
+- Node.js 23+
+- pnpm 9+
+- Git for version control
+- A code editor (VS Code or VSCodium recommended)
+- CUDA Toolkit (optional, for GPU acceleration)
+
 ## Setup Instructions
 
 ### Clone this Repository
 
 ```bash
-git clone https://github.com/worksgoodcompany/aigentlayer.git
+git clone https://github.com/worksgoodcompany/aigentlayer-demo.git
 ```
 
 ### Running AIGENT
@@ -123,13 +133,13 @@ EVM_PRIVATE_KEY=
 INFURA_API_KEY=
 ```
 
-5. **Configure the character file**
+5. **Configure the character file (OPTIONAL)**
 
 Set up the clients you want to use and the AI model provider
 ```
 "name": "AIGENT",                                       # Change this to your desired name.
     "plugins": [],
-    "clients": ["discord", "twitter", "telegram"],      # Remove the ones you don't need.
+    "clients": [],                                      # Add the clients you want to use like ["discord", "twitter", "telegram"]
     "modelProvider": "gaianet",                         # You can replace this with "openai", "openrouter" or others.
 ```
 
