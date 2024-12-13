@@ -11,11 +11,12 @@ AIGENTLAYER is an open-source project that aims to simplify interaction with Eig
 - **Check operator status:** Quickly check the status of an operator.
 - **Check staker status:** Quickly check the status of a staker.
 - **Deposit stETH into EigenLayer:** Request a deposit, and AIGENT will handle the transaction.
+- **Web Client:** AIGENTLAYER comes with a web client that allows you to interact with the agent.
+- **Multiple Client Support:** AIGENTLAYER supports multiple clients, including Discord, Twitter, Telegram, and more.
 
 ## Roadmap (Ideal Features)
 
-- **Claim Rewards:** Automatically claim staking rewards.
-- **Withdraw & Redelegate:** Manage your staking positions effortlessly.
+- **Workflow Automation:** AIGENT can automate workflows, such as restaking, claiming rewards, and withdrawing.
 - **EigenExplorer Full Integration:** Gain real-time insights and data from the EigenLayer ecosystem.
 - **Advanced Evaluators:** Intelligent decision-making—AIGENT can suggest when to restake, claim, or withdraw based on market conditions.
 
